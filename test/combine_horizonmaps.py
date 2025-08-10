@@ -3,13 +3,13 @@ import os
 import rasterio
 
 # Path to the horizonmaps folder
-folder_path = "C:/Users/Uku/Desktop/lunar-planner-prototyping/test/horizonmaps"
+folder_path = "C:/Users/ukuil/Desktop/lunar-planner-prototyping/test/horizonmaps"
 
 # Get a list of all horizonmap files in the folder
 horizonmap_files = [f for f in os.listdir(folder_path) if f.endswith(".tif")]
 
 
-#horizonmap_files = horizonmap_files[30] # take 30 files only for testing
+#horizonmap_files = horizonmap_files[:30]
 # Initialize an empty dictionary to store the horizonmaps
 horizon_maps = {}
 
@@ -29,7 +29,7 @@ for file in horizonmap_files:
 print(horizon_maps.keys())
 #print(horizon_maps[54][4628,225])
 # Save the horizon_maps dictionary to a file
-output_file = "C:/Users/Uku/Desktop/lunar-planner-prototyping/test/combined_horizonmap/combined_horizonmap.npy"
+output_file = "C:/Users/ukuil/Desktop/lunar-planner-prototyping/test/combined_horizonmap/combined_horizonmap.npy"
 np.save(output_file, horizon_maps)
 
 # Example query on the combined horizonmap
